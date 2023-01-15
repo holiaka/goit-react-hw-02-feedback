@@ -12,6 +12,9 @@ export class App extends Component {
   };
 
   onClick = evt => {
+    if (evt.target.tagName !== "BUTTON") {
+      return;
+    }
     const { name } = evt.target;
     let value = this.state[name];
     value += 1;
