@@ -4,9 +4,9 @@ import { ButtonsWrapper, Button } from "./FeedbackOptions.styled";
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const arr = Object.keys(options);
   return (
-    <ButtonsWrapper onClick={onLeaveFeedback}>
+    <ButtonsWrapper>
       {arr.map(item => (
-        <Button key={item} type="button" name={item}>
+        <Button key={item} type="button" name={item} onClick={() => onLeaveFeedback(item)}>
           {item[0].toUpperCase() + item.slice(1)}
         </Button>
       ))}
